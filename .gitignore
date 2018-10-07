@@ -1,0 +1,107 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Output Folders #
+##################
+_site/**
+build/**
+css/**
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.tgz
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.sqlite
+
+# Adobe Source Files #
+######################
+# git is not a good tool for versioning Adobe Suite files, such as .psd
+# So we exclude them - maintain only the exported images and interchangeable formats, such as .svg, as opposed to .ai
+*.psd
+*.pdd
+*.psb
+*.ai
+*.ait
+*.eps
+*.epsf
+*.ps
+*.cdr
+*.indd
+*.indt
+
+# OS generated files #
+######################
+*.lnk
+*~
+*#
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDE (Eclipse/IntelliJ) Config Files #
+#######################################
+.classpath
+.project
+.settings
+.idea
+.metadata
+*.iml
+*.ipr
+
+# AFP Created Files #
+#####################
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Misc #
+########
+res/**
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Management #
+##############
+.npm
+node_modules/
+jspm_packages/
+bower_components
+composer.phar
+/vendor/

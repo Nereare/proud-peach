@@ -1,0 +1,12 @@
+name: Proud Peach
+description: Foo.
+version: 0.1.0-alpha
+link: https://github.com/Nereare/proud-peach
+license:
+  code: MIT
+  name: MIT License
+  link: https://opensource.org/licenses/MIT
+author:
+  name: Igor Padoim
+  email: igorpadoim@gmail.com
+  link: https://nereare.github.io
