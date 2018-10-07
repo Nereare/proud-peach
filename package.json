@@ -1,0 +1,8 @@
+{
+  "name": "proud-peach",
+  "version": "0.1.0-alpha",
+  "main": "index.js",
+  "author": "Igor Padoim <igorpadoim@gmail.com>",
+  "license": "MIT",
+  "private": false
+}

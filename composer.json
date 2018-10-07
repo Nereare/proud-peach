@@ -1,0 +1,13 @@
+{
+    "name": "nereare/proud-peach",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Igor Padoim",
+            "email": "igorpadoim@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {}
+}
