@@ -253,12 +253,20 @@ footer {
   h2 { font-size: 1.75em; }
   p { font-size: .75em; color: $Gray100; }
   ul {
-    margin-top: .5em;
+    margin-top: .3em;
     list-style-type: none;
     li { display: inline; margin-right: .5em; }
   }
   * { margin-bottom: .1em; }
   .container { margin-top: .5em; margin-bottom: .8em; }
+}
+
+/* Main Page-specific styles */
+.menu {
+  ul {
+    margin-bottom: .5em;
+    list-style-type: none;
+  }
 }
 
 /* Login Page-specific styles */
