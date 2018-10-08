@@ -1,0 +1,96 @@
+<?php require __DIR__ . '/header.php'; ?>
+
+      <main class='container row'>
+        <form action="do.php" method="post">
+          <div class='twelve columns'>
+            <h2>Instalação de <?= $pp['name'] ?></h2>
+            <p>Bem vindo ao instalador de <?= $pp['name'] ?>!</p>
+            <p>A instalação é completamente automatizada, sendo necessário
+              apenas preencher os campos abaixo para determinar os valores do
+              usuário de administrador e os dados de banco de dados para
+              inicialização do banco de registros.</p>
+          </div>
+
+          <div class='twelve columns'>
+            <h3>1. Banco de Dados</h3>
+            <p>Os dados solicitados nessa sessão não serão armazenados. Eles são
+              apenas utilizados para instalar a versão local do banco de dados e
+              criar o usuário que será de fato utilizado por essa aplicação.</p>
+            <p>O usuários criado para essa instalação de <?= $pp['name'] ?>
+              serão armazenados, mas esse usuário terá apenas autorização para
+              acessar o banco de dados específico dessa instância.</p>
+            <p>Para mais informações, leia os <a href=''>Termos de Uso</a> de <?= $pp['name'] ?>.</p>
+
+            <!-- DB Username -->
+            <label for="db_username"><i class="material-icons">person</i></label>
+            <input type="text" placeholder="Usuário do BD" id="db_username" name="db_username" autofocus required />
+            <!-- DB Password -->
+            <label for="db_password"><i class="material-icons">lock</i></label>
+            <input type="password" placeholder="Senha" id="db_password" name="db_password" required />
+          </div>
+
+          <div class="twelve columns">
+            <h3>2. Usuário de Administrador</h3>
+            <!-- SU Email -->
+            <label for="su_email"><i class="material-icons">person</i></label>
+            <input type="email" placeholder="Email" id="su_email" name="su_email" required />
+            <!-- SU Password -->
+            <label for="su_password"><i class="material-icons">lock</i></label>
+            <input type="password" placeholder="Senha" id="su_password" name="su_password"
+              pattern="[A-Za-z0-9]{6,}" title="Seis ou mais caracteres alfanuméricos apenas!"
+              required />
+            <!-- SU Name -->
+            <label for="su_name"><i class="material-icons">label</i></label>
+            <input type="text" placeholder="Nome Completo" id="su_name" name="su_name" required />
+            <!-- SU License -->
+            <label for="su_crm"><i class="material-icons">card_membership</i></label>
+            <input type="number" placeholder="CRM" id="su_crm" name="su_crm" required />
+            <!-- SU License State -->
+            <label for="su_crm_state"><i class="material-icons">place</i></label>
+            <select id="su_crm_state" name="su_crm_state" required>
+              <option value="" selected>Selecione o estado emissor do CRM</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+          </div>
+
+          <div>
+            <h3>3. Finalização</h3>
+            <p>Cheque todos os dados acima por erros, não haverá uma tela de
+              confirmação de dados.</p>
+            <p>Se todos os dados estiverem corretos, clique em <em>Instalar</em>
+              para dar início à instalação.</p>
+            <p><strong>Importante!</strong> Ao clicar abaixo, você afirma
+              concordar com todos os <a href=''>Termos de Uso</a> e com os
+              <a href=''>Termos de Privacidade</a> desse aplicativo.</p>
+            <input class="button-primary u-full-width" type="submit" value="Instalar" />
+          </div>
+        </form>
+      </main>
+
+<?php require __DIR__ . '/footer.php'; ?>
