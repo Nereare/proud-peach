@@ -235,6 +235,7 @@ nav {
       text-transform: uppercase;
       display: inline;
       margin-left: 1em;
+      color: $Gray100;
     }
   }
 }
@@ -267,5 +268,4 @@ footer {
     margin-top: 3em;
     @media (min-width: 400px) { width: 350px; }
   }
-  nav { display: none; }
 }
