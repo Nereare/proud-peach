@@ -26,12 +26,13 @@
       <header>
         <div class='container'>
           <h1><?= $pp['name'] ?></h1>
+          <?php if ($auth->isLoggedIn()) { ?>
           <nav>
             <ul>
-              <li><a href='#'>Prontuários</a></li>
-              <li><a href='#'>Prescrições</a></li>
-              <li><a href='#'>Atestados</a></li>
+              <li><?= $auth->getUsername() ?></li>
+              <li><a href='logout.php'><i class="material-icons">exit_to_app</i></a></li>
             </ul>
           </nav>
+          <?php } ?>
         </div>
       </header>
