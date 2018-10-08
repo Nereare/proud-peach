@@ -5,19 +5,19 @@
       </main>
       <?php } else { ?>
       <main class='container form'>
-        <form method='session.php' action='post'>
+        <form method='post' action='login.php'>
           <div class='row'>
             <div class='twelve columns'>
               <!-- Username -->
               <label for='email'><i class="material-icons">person</i></label>
-              <input type="email" placeholder="Email" id="email" autofocus required />
+              <input type="email" placeholder="Email" id="email" name="email" autofocus required />
             </div>
           </div>
           <div class='row'>
             <div class='twelve columns'>
               <!-- Password -->
               <label for='password'><i class="material-icons">lock</i></label>
-              <input type="password" placeholder="Senha" id="password" required />
+              <input type="password" placeholder="Senha" id="password" name="password" required />
             </div>
           </div>
           <div class='row'>
