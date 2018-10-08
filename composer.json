@@ -1,13 +1,18 @@
 {
-    "name": "nereare/proud-peach",
-    "type": "project",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Igor Padoim",
-            "email": "igorpadoim@gmail.com"
-        }
-    ],
-    "minimum-stability": "alpha",
-    "require": {}
+  "name": "nereare/proud-peach",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Igor Padoim",
+      "email": "igorpadoim@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "symfony/yaml": "^3.4",
+    "delight-im/auth": "^8.0",
+    "ircmaxell/random-lib": "^1.2"
+  },
+  "minimum-stability": "alpha"
 }
