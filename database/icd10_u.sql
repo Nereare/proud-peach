@@ -1,0 +1,17 @@
+INSERT INTO `icd10` (`code`, `description`, `abbr`) VALUES
+  ('U04', 'Síndrome respiratória aguda grave (severe acute respiratory syndrome SARS)', 'U04 Síndrome respiratória aguda grave (SARS)'),
+  ('U049', 'Síndrome respiratória aguda grave (Severe acute respiratory syndrome) (SARS), não especificada', 'U04.9 Síndrome respiratória aguda grave (SARS)'),
+  ('U80', 'Agente resistente à penicilina e antibióticos relacionados', 'U80 Agente resist penicilina e antibiót relac'),
+  ('U800', 'Agente resistente à penicilina', 'U80.0 Agente resistente à penicilina'),
+  ('U801', 'Agente resistente à meticilina', 'U80.1 Agente resistente à meticilina'),
+  ('U808', 'Agente resistente a outro antibiótico relacionado à penicilina', 'U80.8 Agente resist outr antibiót relac penicilina'),
+  ('U81', 'Agente resistente à vancomicina e antibióticos relacionados', 'U81 Agente resist vancomicina e antibiót relac'),
+  ('U810', 'Agente resistente à vancomicina', 'U81.0 Agente resistente à vancomicina'),
+  ('U818', 'Agente resistente a outros antibióticos relacionado à vancomicina', 'U81.8 Agente resist outr antibiót relac vancomicina'),
+  ('U88', 'Agente resistente a múltiplos antibióticos', 'U88 Agente resistente a múltiplos antibióticos'),
+  ('U88', 'Agente resistente a múltiplos antibióticos', 'U88 Agente resistente a múltiplos antibióticos'),
+  ('U89', 'Agente resistente a outros antibióticos e a antibióticos não especificados', 'U89 Agente resist outr antibiót e antibiót NE'),
+  ('U898', 'Agente resistente a outro antibiótico especificado único', 'U89.8 Agente resist outro antibiótico espec único'),
+  ('U899', 'Agente resistente a antibiótico não especificado', 'U89.9 Agente resistente a antibiótico NE'),
+  ('U99', 'CID 10ª Revisão não disponível', 'U99 CID 10a Revisao nao disponivel'),
+  ('U99', 'CID 10ª Revisão não disponível', 'U99 CID 10a Revisao nao disponivel');
