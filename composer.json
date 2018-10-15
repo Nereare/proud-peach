@@ -12,7 +12,8 @@
     "php": ">=7.0",
     "symfony/yaml": "^3.4",
     "delight-im/auth": "^8.0",
-    "ircmaxell/random-lib": "^1.2"
+    "ircmaxell/random-lib": "^1.2",
+    "defuse/php-encryption": "^2.2"
   },
   "minimum-stability": "alpha"
 }

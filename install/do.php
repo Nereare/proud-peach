@@ -93,11 +93,18 @@
       $db->exec('INSERT INTO `profiles`(id, crm, state) VALUES (' . $install['su']['id'] . ', ' . $install['su']['crm'] . ', "' . $install['su']['state'] . '");');
       ?><p><i class="material-icons pass">check_circle</i> Dados médicos do superusuário (CRM/<?= $install['su']['state'] ?> <?= $install['su']['crm'] ?>) inseridos.</p><?php
 
+      // Creating proud_peach encryption key:
+      $key = Defuse\Crypto\Key::createNewRandomKey();
+      $key_string['string'] = $key->saveToAsciiSafeString();
+      $meta = Symfony\Component\Yaml\Yaml::dump($key_string);
+      file_put_contents('../key.yml', $meta);
+      ?><p><i class="material-icons pass">check_circle</i> Dados de segurança salvos.</p><?php
+
       // Writing Yaml file:
       $meta = Symfony\Component\Yaml\Yaml::dump($pp);
       file_put_contents('../meta.yml', $meta);
       ?>
-      <p><i class="material-icons pass">check_circle</i> Metadados salvos.</p>
+      <p><i class="material-icons pass">check_circle</i> Metadados do banco de dados salvos.</p>
       <p><i class="material-icons pass">thumb_up</i> Instalação concluída!</p>
 
       <h2>Aviso</h2>
