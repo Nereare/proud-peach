@@ -34,31 +34,51 @@
       // Connecting to the database:
       $db = new \PDO('mysql:host=localhost;charset=utf8mb4', $install['db']['username'], $install['db']['password']);
 
-      // CREATE DATABASE
-      $db->exec('CREATE DATABASE IF NOT EXISTS proud_peach;');
-      ?><p><i class="material-icons pass">check_circle</i> Banco de dados iniciado.</p><?php
-      // USE DATABASE
-      $db->exec('USE proud_peach;');
-      ?><p><i class="material-icons pass">check_circle</i> Banco de dados selecionado.</p><?php
+      // Create Database and use it:
+      $db->exec(file_get_contents('../database/database.sql'));
+      ?><p><i class="material-icons pass">check_circle</i> Banco de dados criado e selecionado.</p><?php
 
-      // CREATE TABLEs
-      $db->exec('CREATE TABLE IF NOT EXISTS `users` ( `id` int(10) unsigned NOT NULL AUTO_INCREMENT, `email` varchar(249) COLLATE utf8mb4_unicode_ci NOT NULL, `password` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_cs NOT NULL, `username` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL, `status` tinyint(2) unsigned NOT NULL DEFAULT 0, `verified` tinyint(1) unsigned NOT NULL DEFAULT 0, `resettable` tinyint(1) unsigned NOT NULL DEFAULT 1, `roles_mask` int(10) unsigned NOT NULL DEFAULT 0, `registered` int(10) unsigned NOT NULL, `last_login` int(10) unsigned DEFAULT NULL, `force_logout` mediumint(7) unsigned NOT NULL DEFAULT 0, PRIMARY KEY (`id`), UNIQUE KEY `email` (`email`)) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;');
-      ?><p><i class="material-icons pass">check_circle</i> Tabela <em>users</em> criada.</p><?php
+      // Create PHP Auth tables:
+      $db->exec(file_get_contents('../vendor/delight-im/auth/Database/MySQL.sql'));
+      ?><p><i class="material-icons pass">check_circle</i> Tabelas de usuários criada.</p><?php
 
-      $db->exec('CREATE TABLE IF NOT EXISTS `users_confirmations` ( `id` int(10) unsigned NOT NULL AUTO_INCREMENT, `user_id` int(10) unsigned NOT NULL, `email` varchar(249) COLLATE utf8mb4_unicode_ci NOT NULL, `selector` varchar(16) CHARACTER SET latin1 COLLATE latin1_general_cs NOT NULL, `token` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_cs NOT NULL, `expires` int(10) unsigned NOT NULL, PRIMARY KEY (`id`), UNIQUE KEY `selector` (`selector`), KEY `email_expires` (`email`,`expires`), KEY `user_id` (`user_id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;');
-      ?><p><i class="material-icons pass">check_circle</i> Tabela <em>users_confirmations</em> criada.</p><?php
+      // Create PHP Auth extra tables:
+      $db->exec(file_get_contents('../database/extra.sql'));
+      ?><p><i class="material-icons pass">check_circle</i> Tabelas extras de usuários criada.</p><?php
 
-      $db->exec('CREATE TABLE IF NOT EXISTS `users_remembered` (`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT, `user` int(10) unsigned NOT NULL, `selector` varchar(24) CHARACTER SET latin1 COLLATE latin1_general_cs NOT NULL, `token` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_cs NOT NULL, `expires` int(10) unsigned NOT NULL, PRIMARY KEY (`id`), UNIQUE KEY `selector` (`selector`), KEY `user` (`user`)) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;');
-      ?><p><i class="material-icons pass">check_circle</i> Tabela <em>users_remembered</em> criada.</p><?php
+      // Create Proud Peach's tables:
+      $db->exec(file_get_contents('../database/tables.sql'));
+      ?><p><i class="material-icons pass">check_circle</i> Banco de dados criado e selecionado.</p><?php
 
-      $db->exec('CREATE TABLE IF NOT EXISTS `users_resets` (`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT, `user` int(10) unsigned NOT NULL, `selector` varchar(20) CHARACTER SET latin1 COLLATE latin1_general_cs NOT NULL, `token` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_cs NOT NULL, `expires` int(10) unsigned NOT NULL, PRIMARY KEY (`id`), UNIQUE KEY `selector` (`selector`), KEY `user_expires` (`user`,`expires`)) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;');
-      ?><p><i class="material-icons pass">check_circle</i> Tabela <em>users_resets</em> criada.</p><?php
-
-      $db->exec('CREATE TABLE IF NOT EXISTS `users_throttling` (`bucket` varchar(44) CHARACTER SET latin1 COLLATE latin1_general_cs NOT NULL, `tokens` float unsigned NOT NULL, `replenished_at` int(10) unsigned NOT NULL, `expires_at` int(10) unsigned NOT NULL, PRIMARY KEY (`bucket`), KEY `expires_at` (`expires_at`)) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;');
-      ?><p><i class="material-icons pass">check_circle</i> Tabela <em>users_throttling</em> criada.</p><?php
-
-      $db->exec('CREATE TABLE IF NOT EXISTS `profiles` (`id` int(10) unsigned NOT NULL, `crm` int(8) unsigned NOT NULL DEFAULT 0, `state` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_cs NOT NULL, PRIMARY KEY (`id`), UNIQUE KEY `crm` (`crm`)) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;');
-      ?><p><i class="material-icons pass">check_circle</i> Tabela <em>profiles</em> criada.</p><?php
+      // Create ICD-10 tables:
+      $db->exec(file_get_contents('../database/icd10.sql'));
+      $db->exec(file_get_contents('../database/icd10_a.sql'));
+      $db->exec(file_get_contents('../database/icd10_b.sql'));
+      $db->exec(file_get_contents('../database/icd10_c.sql'));
+      $db->exec(file_get_contents('../database/icd10_d.sql'));
+      $db->exec(file_get_contents('../database/icd10_e.sql'));
+      $db->exec(file_get_contents('../database/icd10_f.sql'));
+      $db->exec(file_get_contents('../database/icd10_g.sql'));
+      $db->exec(file_get_contents('../database/icd10_h.sql'));
+      $db->exec(file_get_contents('../database/icd10_i.sql'));
+      $db->exec(file_get_contents('../database/icd10_j.sql'));
+      $db->exec(file_get_contents('../database/icd10_k.sql'));
+      $db->exec(file_get_contents('../database/icd10_l.sql'));
+      $db->exec(file_get_contents('../database/icd10_m.sql'));
+      $db->exec(file_get_contents('../database/icd10_n.sql'));
+      $db->exec(file_get_contents('../database/icd10_o.sql'));
+      $db->exec(file_get_contents('../database/icd10_p.sql'));
+      $db->exec(file_get_contents('../database/icd10_q.sql'));
+      $db->exec(file_get_contents('../database/icd10_r.sql'));
+      $db->exec(file_get_contents('../database/icd10_s.sql'));
+      $db->exec(file_get_contents('../database/icd10_t.sql'));
+      $db->exec(file_get_contents('../database/icd10_u.sql'));
+      $db->exec(file_get_contents('../database/icd10_v.sql'));
+      $db->exec(file_get_contents('../database/icd10_w.sql'));
+      $db->exec(file_get_contents('../database/icd10_y.sql'));
+      $db->exec(file_get_contents('../database/icd10_x.sql'));
+      $db->exec(file_get_contents('../database/icd10_z.sql'));
+      ?><p><i class="material-icons pass">check_circle</i> Tabela de CID 10 criada.</p><?php
 
       // CREATE USER and GRANT
       $db->exec('CREATE USER "proud_peach"@"localhost" IDENTIFIED BY "' . $install['pp']['password'] . '"');

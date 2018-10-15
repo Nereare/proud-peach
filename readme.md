@@ -39,6 +39,8 @@ This projects uses [SemVer](http://semver.org/) for versioning. For the versions
 ### Credits
 
  * [MIT License Logo](http://excaliburzero.deviantart.com/art/MIT-License-Logo-595847140) by [ExcaliburZero](http://excaliburzero.deviantart.com/), available under a [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/)
+ * [ICD 10, portuguese electronic version](http://www.datasus.gov.br/cid10/V2008/download.htm) by
+ CBCD
 
 ### Package managers
 
