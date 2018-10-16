@@ -2,18 +2,27 @@
 # yarn lockfile v1
 
 
+angular@^1.7.5:
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.5.tgz#d1c1c01c6f5dc835638f3f9aa51012857bdac49e"
+  integrity sha512-760183yxtGzni740IBTieNuWLtPNAoMqvmC0Z62UoU0I3nqk+VJuO3JbQAXOyvo3Oy/ZsdNQwrSTh/B0OQZjNw==
+
 material-design-icons@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/material-design-icons/-/material-design-icons-3.0.1.tgz#9a71c48747218ebca51e51a66da682038cdcb7bf"
+  integrity sha1-mnHEh0chjrylHlGmbaaCA4zct78=
 
 skeleton-css@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/skeleton-css/-/skeleton-css-2.0.4.tgz#d70db2f01fe8209ac79f2f4eee83fae8a40591b8"
+  integrity sha1-1w2y8B/oIJrHny9O7oP66KQFkbg=
 
 typeface-quicksand@^0.0.54:
   version "0.0.54"
   resolved "https://registry.yarnpkg.com/typeface-quicksand/-/typeface-quicksand-0.0.54.tgz#d8f60bcfbea663cda97a0e973f24e6c35d76561a"
+  integrity sha512-jArArHAh3UdLfoybVAoRgjAT+otdRwI+MIrwHNPuUE2FdWUyg8WqwteTo7YSoQPPE7IwkdCh1EBuJKicF49EzQ==
 
 typeface-raleway@^0.0.54:
   version "0.0.54"
   resolved "https://registry.yarnpkg.com/typeface-raleway/-/typeface-raleway-0.0.54.tgz#f166c517becc81f34d14e72736d28b8923c79c65"
+  integrity sha512-oilrvv0fV+z4eYvfTAl6t9Oq1mE/ZrLDPM71TrcAtqyVb0QzAJ6hQBS+FQcYdHxK2LGQE+gloQUPtwgY2I7WxA==
