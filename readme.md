@@ -3,8 +3,7 @@
 [![Version](https://img.shields.io/badge/version-0.1.0--alpha-lightgrey.svg "0.1.0-alpha")](https://github.com/nereare/proud-peach/)
 [![License](https://img.shields.io/github/license/Nereare/proud-peach.svg)](https://github.com/Nereare/proud-peach)
 [![Build Status](https://travis-ci.org/Nereare/proud-peach.svg?branch=master)](https://travis-ci.org/Nereare/proud-peach)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/6302d250d35e48d6e370/test_coverage)](https://codeclimate.com/github/Nereare/proud-peach/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/6302d250d35e48d6e370/maintainability)](https://codeclimate.com/github/Nereare/proud-peach/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/81a99f108957731bec66/maintainability)](https://codeclimate.com/github/Nereare/proud-peach/maintainability)
 
 A simple medical register online application.
 
