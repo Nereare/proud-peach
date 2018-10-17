@@ -1,4 +1,11 @@
-<?php require __DIR__ . '/header.php'; ?>
+<?php
+  require __DIR__ . '/header.php';
+
+  use Defuse\Crypto\Key;
+  use Delight\Auth\Auth;
+  use RandomLib\Factory;
+  use Symfony\Component\Yaml\Yaml;
+?>
 
 <main class='container row'>
   <div class='twelve columns'>
@@ -25,14 +32,16 @@
     $install['su']['state']    = $_POST['su_crm_state'];
 
     // Creating proud_peach user's password:
-    $factory = new RandomLib\Factory;
+    $factory = new Factory;
     $generator = $factory->getHighStrengthGenerator();
     $install['pp']['password'] = $generator->generateString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+    $pp['db']['name']     = 'proud_peach';
+    $pp['db']['username'] = 'proud_peach';
     $pp['db']['password'] = $install['pp']['password'];
 
     try {
       // Connecting to the database:
-      $db = new \PDO('mysql:host=localhost;charset=utf8mb4', $install['db']['username'], $install['db']['password']);
+      $db = new PDO('mysql:host=localhost;charset=utf8mb4', $install['db']['username'], $install['db']['password']);
 
       // Create Database and use it:
       $db->exec(file_get_contents('../database/database.sql'));
@@ -87,22 +96,22 @@
       ?><p><i class="material-icons pass">check_circle</i> Autorizações concedidas.</p><?php
 
       // Creating superuser:
-      $auth = new \Delight\Auth\Auth($db);
+      $auth = new Auth($db);
       $install['su']['id'] = $auth->register($install['su']['email'], $install['su']['password'], $install['su']['name']);
       ?><p><i class="material-icons pass">check_circle</i> Superusuário criado para <?= $install['su']['name'] ?> (<?= $install['su']['email'] ?>).</p><?php
       $db->exec('INSERT INTO `profiles`(id, crm, state) VALUES (' . $install['su']['id'] . ', ' . $install['su']['crm'] . ', "' . $install['su']['state'] . '");');
       ?><p><i class="material-icons pass">check_circle</i> Dados médicos do superusuário (CRM/<?= $install['su']['state'] ?> <?= $install['su']['crm'] ?>) inseridos.</p><?php
 
       // Creating proud_peach encryption key:
-      $key = Defuse\Crypto\Key::createNewRandomKey();
+      $key = Key::createNewRandomKey();
       $key_string['string'] = $key->saveToAsciiSafeString();
-      $meta = Symfony\Component\Yaml\Yaml::dump($key_string);
+      $meta = Yaml::dump($key_string);
       file_put_contents('../key.yml', $meta);
       ?><p><i class="material-icons pass">check_circle</i> Dados de segurança salvos.</p><?php
 
-      // Writing Yaml file:
-      $meta = Symfony\Component\Yaml\Yaml::dump($pp);
-      file_put_contents('../meta.yml', $meta);
+      // Writing Config file:
+      $meta = Yaml::dump($pp);
+      file_put_contents('../config.yml', $meta);
       ?>
       <p><i class="material-icons pass">check_circle</i> Metadados do banco de dados salvos.</p>
       <p><i class="material-icons pass">thumb_up</i> Instalação concluída!</p>

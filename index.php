@@ -1,7 +1,7 @@
 <?php require __DIR__ . '/header.php'; ?>
 
       <?php if ($auth->isLoggedIn()) { ?>
-      <main class='container'>
+      <main class='container' ng-app=''>
         <div class='row'>
           <div class='three columns menu'>
             <ul>

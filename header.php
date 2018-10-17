@@ -1,11 +1,25 @@
 <?php
   require __DIR__ . '/vendor/autoload.php';
 
+  use Defuse\Crypto\Key;
+  use Delight\Auth\Auth;
   use Symfony\Component\Yaml\Yaml;
-  $pp = Yaml::parseFile('meta.yml');
 
-  $db = new \PDO('mysql:dbname=' . $pp['db']['name'] . ';host=localhost;charset=utf8mb4', $pp['db']['username'], $pp['db']['password']);
-  $auth = new \Delight\Auth\Auth($db);
+  $pp = array_merge(
+    Yaml::parseFile('meta.yml'),
+    Yaml::parseFile('config.yml')
+  );
+  $key = null;
+
+  $db = new PDO('mysql:dbname=' . $pp['db']['name'] . ';host=localhost;charset=utf8mb4', $pp['db']['username'], $pp['db']['password']);
+  $auth = new Auth($db);
+  if ($auth->isLoggedIn()) {
+    // If the user is logged in, she/he may have access to the data encrypted.
+    // So we get the key's safe string...
+    $keystr = Yaml::parseFile('key.yml');
+    // ...and parse the key.
+    $key = Key::loadFromAsciiSafeString($keystr['string']);
+  }
 ?>
 <html lang='en-US'>
   <head>
