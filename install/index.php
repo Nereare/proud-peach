@@ -79,8 +79,87 @@
             </select>
           </div>
 
-          <div>
-            <h3>3. Finalização</h3>
+          <div class="twelve columns">
+            <h3>3. Local de Atendimento</h3>
+            <!-- Place Name -->
+            <label for="pl_name"><i class="material-icons">bookmark</i></label>
+            <input type="text" placeholder="Nome do Local" id="pl_name" name="pl_name" required />
+            <!-- Place Address 1 -->
+            <label for="pl_addr1"><i class="material-icons">place</i></label>
+            <input type="text" placeholder="Endereço do Local" id="pl_addr1" name="pl_addr1" required />
+            <!-- Place Address 2 -->
+            <label for="pl_addr2"><i class="material-icons">location_city</i></label>
+            <input type="text" placeholder="Bairro, Cidade e Estado" id="pl_addr2" name="pl_addr2" required />
+            <!-- Place Postal Code -->
+            <label for="pl_postcode"><i class="material-icons">pin_drop</i></label>
+            <input type="text" placeholder="CEP" id="pl_postcode" name="pl_postcode" required />
+            <!-- Place Telephone -->
+            <label for="pl_phone"><i class="material-icons">phone</i></label>
+            <input type="text" placeholder="(DDD) Telefone" id="pl_phone" name="pl_phone"
+              pattern="[0-9\+]{2,4}?\(\d{2,3})\) ?\d{4,5}\-\d{4}"
+              title="Telefone precedido de DDD no formato '(12)1234-5678'"
+              required />
+            <!-- Place Email -->
+            <label for="pl_email"><i class="material-icons">email</i></label>
+            <input type="email" placeholder="Email" id="pl_email" name="pl_email" required />
+          </div>
+
+          <div class="twelve columns">
+            <h3>4. Responsável pelo Local</h3>
+            <!-- Supervisor Name -->
+            <label for="sup_name"><i class="material-icons">person_pin_circle</i></label>
+            <input type="text" placeholder="Nome do Responsável" id="sup_name" name="sup_name" required />
+            <!-- Supervisor License -->
+            <label for="sup_crm"><i class="material-icons">card_membership</i></label>
+            <input type="number" placeholder="CRM do Responsável" id="sup_crm" name="sup_crm" required />
+            <!-- Supervisor License State -->
+            <label for="sup_crm_state"><i class="material-icons">place</i></label>
+            <select id="sup_crm_state" name="sup_crm_state" required>
+              <option value="" selected>Selecione o estado emissor do CRM do Supervisor</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+            <!-- Supervisor License State -->
+            <label for="sup_register_type"><i class="material-icons">info</i></label>
+            <select id="sup_register_type" name="sup_register_type" required>
+              <option value="" selected>Tipo de Registro (CPF/CNPJ)</option>
+              <option value="CPF">Cadastro de Pessoa Física</option>
+              <option value="CNPJ">Cadastro Nacional de Pessoa Jurídica</option>
+            </select>
+            <!-- Supervisor Register -->
+            <label for="sup_register"><i class="material-icons">verified_user</i></label>
+            <input type="text" placeholder="CPF/CNPJ" id="sup_register" name="sup_register"
+              pattern="[0-9\.\/\-]{14,18}" title="Formate o CPF no formato XXX.XXX.XXX-XX e o CNPJ no formato XX.XXX.XXX/XXXX-XX."
+              required />
+          </div>
+
+          <div class="twelve columns">
+            <h3>5. Finalização</h3>
             <p>Cheque todos os dados acima por erros, não haverá uma tela de
               confirmação de dados.</p>
             <p>Se todos os dados estiverem corretos, clique em <em>Instalar</em>

@@ -31,13 +31,28 @@
     $install['su']['crm']      = $_POST['su_crm'];
     $install['su']['state']    = $_POST['su_crm_state'];
 
-    // Creating proud_peach user's password:
+    // Creating proud_peach database user's password:
     $factory = new Factory;
     $generator = $factory->getHighStrengthGenerator();
     $install['pp']['password'] = $generator->generateString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
-    $pp['db']['name']     = 'proud_peach';
-    $pp['db']['username'] = 'proud_peach';
-    $pp['db']['password'] = $install['pp']['password'];
+    $pp2['db']['name']     = 'proud_peach';
+    $pp2['db']['username'] = 'proud_peach';
+    $pp2['db']['password'] = $install['pp']['password'];
+
+    // Registering Location data:
+    $pp2['location']['name']                = $_POST['pl_name'];
+    $pp2['location']['address']['address']  = $_POST['pl_addr1'];
+    $pp2['location']['address']['city']     = $_POST['pl_addr2'];
+    $pp2['location']['address']['postcode'] = $_POST['pl_postcode'];
+    $pp2['location']['phone']               = $_POST['pl_phone'];
+    $pp2['location']['email']               = $_POST['pl_email'];
+
+    // Registering Supervisor data:
+    $pp2['supervisor']['name']               = $_POST['sup_name'];
+    $pp2['supervisor']['crm']['crm']         = $_POST['sup_crm'];
+    $pp2['supervisor']['crm']['state']       = $_POST['sup_crm_state'];
+    $pp2['supervisor']['register']['type']   = $_POST['sup_register_type'];
+    $pp2['supervisor']['register']['number'] = $_POST['sup_register'];
 
     try {
       // Connecting to the database:
@@ -110,7 +125,7 @@
       ?><p><i class="material-icons pass">check_circle</i> Dados de segurança salvos.</p><?php
 
       // Writing Config file:
-      $meta = Yaml::dump($pp);
+      $meta = Yaml::dump($pp2);
       file_put_contents('../config.yml', $meta);
       ?>
       <p><i class="material-icons pass">check_circle</i> Metadados do banco de dados salvos.</p>
