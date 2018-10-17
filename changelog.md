@@ -34,3 +34,13 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
  * Base site design and HTML.
  * Database schematics.
  * ICD-10 list.
+ * Install script and wizard.
+ * Server-side depencies:
+   * Defuse/PHP-Encryption;
+   * Delight-im/Auth;
+   * Ircmaxell/Random-lib and /Security-lib.
+ * Client-side depencies:
+   * AngularJS;
+   * Material Design Icons;
+   * Skeleton CSS;
+   * Quicksand and Raleway typefaces.
