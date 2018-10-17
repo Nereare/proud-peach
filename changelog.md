@@ -30,6 +30,7 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 
  * License, git metafiles and ReadMe file.
  * Changelog file.
+ * Code of Conduct.
  * Metadata YAML file.
  * Base site design and HTML.
  * Database schematics.

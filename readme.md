@@ -6,7 +6,9 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6302d250d35e48d6e370/test_coverage)](https://codeclimate.com/github/Nereare/proud-peach/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/6302d250d35e48d6e370/maintainability)](https://codeclimate.com/github/Nereare/proud-peach/maintainability)
 
-Another megalomaniac project for passtime.
+A simple medical register online application.
+
+This app is focused on brazilian legislation, international portability is not a current aim for it.
 
 ## Contributing
 
@@ -33,6 +35,10 @@ See the [Change Log](https://github.com/Nereare/proud-peach/blob/master/changelo
 ### Versioning
 
 This projects uses [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/Nereare/proud-peach/tags).
+
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](https://github.com/Nereare/proud-peach/blob/master/code-of-conduct.md). By participating in this project you agree to abide by its terms.
 
 ## Credits and Thanks
 
