@@ -1,6 +1,3 @@
-env:
-  global:
-    - CC_TEST_REPORTER_ID=5c2100fba4a17cee32e2aea584bd1414f7c75b0e053dbfb17b4fcfb7c24bbc8a
 git:
   depth: 3
 branches:
@@ -12,12 +9,6 @@ php:
   - 7.0
   - 7.1
   - nightly
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
 script:
   - composer install
   - vendor/bin/phpunit --bootstrap vendor/autoload.php tests/MetadataTest
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
