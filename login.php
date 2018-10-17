@@ -1,4 +1,13 @@
-<?php require __DIR__ . '/header.php'; ?>
+<?php
+  require __DIR__ . '/header.php';
+
+  function printError($msg) {
+    ?>
+      <p><i class="material-icons error">error</i> <?= $msg ?></p>
+      <p><a href="./">Retornar à página inicial</a></p>
+    <?php
+  }
+?>
 
 <main class="container">
   <?php if ($auth->isLoggedIn()) { ?>
@@ -18,15 +27,11 @@
     <p>Login realizado com sucesso.</p>
     <p><a href="./">Voltar à página inicial</a></p>
   <?php
-    } catch (\Delight\Auth\InvalidEmailException $e) {
-        die('<p><i class="material-icons error">error</i> Email não cadastrado.</p>');
-    } catch (\Delight\Auth\InvalidPasswordException $e) {
-        die('<p><i class="material-icons error">error</i> Senha errada.</p>');
-    } catch (\Delight\Auth\EmailNotVerifiedException $e) {
-        die('<p><i class="material-icons error">error</i> Email não verificado.</p>');
-    } catch (\Delight\Auth\TooManyRequestsException $e) {
-        die('<p><i class="material-icons error">error</i> Número de requisições excedido.</p>');
     }
+    catch (\Delight\Auth\InvalidEmailException $e) { printError('Email não cadastrado.'); }
+    catch (\Delight\Auth\InvalidPasswordException $e) { printError('Senha errada.'); }
+    catch (\Delight\Auth\EmailNotVerifiedException $e) { printError('Email não verificado.'); }
+    catch (\Delight\Auth\TooManyRequestsException $e) { printError('Número de requisições excedido.'); }
   ?>
   <?php } ?>
 </main>
