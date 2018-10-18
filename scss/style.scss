@@ -202,7 +202,7 @@ h3, h4, h5, h6 { @include fontcolor_gradient($Cyan500, $Teal500); }
 a {
   text-decoration: none;
   color: $Blue500;
-  &:hover, &:active, &:focus { color: $Red300; }
+  &:hover, &:active, &:focus { color: $Blue300; }
 }
 i.error { color: $Red500; }
 i.pass  { color: $Teal500; }
