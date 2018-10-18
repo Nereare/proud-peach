@@ -33,6 +33,8 @@
     <link rel='stylesheet' href='node_modules/typeface-raleway/index.css' />
     <link rel='stylesheet' href='css/style.css' />
     <script src='node_modules/angular/angular.min.js'></script>
+    <script src='node_modules/angular-route/angular-route.min.js'></script>
+    <script src='script.js'></script>
   </head>
 
   <body class='<?= $auth->isLoggedIn()?'':'login' ?>'>

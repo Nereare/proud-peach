@@ -1,18 +1,20 @@
 <?php require __DIR__ . '/header.php'; ?>
 
       <?php if ($auth->isLoggedIn()) { ?>
-      <main class='container' ng-app=''>
+      <main class='container' ng-app='proud_peach'>
         <div class='row'>
           <div class='three columns menu'>
             <ul>
-              <li><button class="u-full-width">Pacientes</button></li>
-              <li><button class="u-full-width">Prontuários</button></li>
-              <li><button class="u-full-width">Prescrições</button></li>
-              <li><button class="u-full-width">Atestados</button></li>
+              <li><button class="u-full-width"><a href='#!'>Início</a></button></li>
+              <li><button class="u-full-width"><a href='#!/patients'>Pacientes</a></button></li>
+              <li><button class="u-full-width"><a href='#!/records'>Prontuários</a></button></li>
+              <li><button class="u-full-width"><a href='#!/prescriptions'>Prescrições</a></button></li>
+              <li><button class="u-full-width"><a href='#!/leaves'>Atestados</a></button></li>
             </ul>
           </div>
-          <div class='nine columns' id="contents">
+          <div class='nine columns' ng-controller='mainCtrl'>
             <!-- Contents come here. -->
+            <div ng-view></div>
           </div>
         </div>
       </main>
