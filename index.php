@@ -42,6 +42,13 @@
               </div>
             </div>
           </form>
+
+          <div class='row'>
+            <div class='twelve columns'>
+              <p>Esse site usa cookies para seu funcionamento, ao continuar utilizando <?= $pp['name'] ?> você concorda com o uso de seus cookies.</p>
+              <p><a href='https://cookiesandyou.com/' target='_blank'>Saiba mais.</a></p>
+            </div>
+          </div>
         </main>
       <?php } ?>
 
